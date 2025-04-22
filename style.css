@@ -1,4 +1,5 @@
 /* ========== Base Styles ========== */
+/* Sets up base font, removes default margin/padding, and sets default background/text color */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,17 +8,20 @@ body {
     color: #222222;
   }
   
+  /* Centers the main content with a max width */
   .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
   }
   
+  /* Enables smooth transition when switching contrast mode */
   .page-wrapper {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   /* ========== Skip Link ========== */
+  /* Visually hidden link for keyboard users to skip to main content */
   .skip-link {
     position: absolute;
     top: -40px;
@@ -29,11 +33,13 @@ body {
     text-decoration: none;
   }
   
+  /* Reveals skip link when focused */
   .skip-link:focus {
     top: 0;
   }
   
   /* ========== Header & Footer ========== */
+  /* Unified color and layout for header and footer */
   header, footer {
     background-color: #2E7D32;
     color: white;
@@ -42,6 +48,7 @@ body {
   }
   
   /* ========== Navigation ========== */
+  /* Styles navigation list container */
   nav ul {
     list-style: none;
     background-color: #333333;
@@ -50,10 +57,12 @@ body {
     overflow: hidden;
   }
   
+  /* Floats navigation list items horizontally */
   nav ul li {
     float: left;
   }
   
+  /* Styles each link in the nav bar */
   nav ul li a {
     display: block;
     padding: 14px 20px;
@@ -61,6 +70,7 @@ body {
     text-decoration: none;
   }
   
+  /* Changes link background/text on hover/focus for accessibility */
   nav ul li a:hover,
   nav ul li a:focus {
     background-color: #4FC3F7;
@@ -68,17 +78,20 @@ body {
   }
   
   /* ========== Main Layout ========== */
+  /* Sets up two-column layout using flexbox */
   main {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
   }
   
+  /* Main content area (left side, wider) */
   .main-content {
     flex: 3;
     padding: 20px;
   }
   
+  /* Sidebar (right side, narrower) */
   .sidebar {
     flex: 1;
     padding: 20px;
@@ -87,6 +100,7 @@ body {
     gap: 10px;
   }
   
+  /* Styles images in the sidebar to be responsive */
   .sidebar img {
     width: 100%;
     height: auto;
@@ -94,18 +108,21 @@ body {
   }
   
   /* ========== Media ========== */
+  /* Responsive video block styling */
   video.small-video {
     width: 80%;
     display: block;
     margin: 1em 0;
   }
   
+  /* Adds spacing for audio elements */
   audio {
     margin: 1em 0;
     display: block;
   }
   
   /* ========== Captions ========== */
+  /* Styling for image captions */
   figcaption {
     font-size: 0.85em;
     font-style: italic;
@@ -114,6 +131,7 @@ body {
   }
   
   /* ========== Map ========== */
+  /* Container styling for embedded Google Map */
   .map-container {
     margin: 20px 0;
     border: 1px solid #ccc;
@@ -122,11 +140,13 @@ body {
   }
   
   /* ========== High Contrast Toggle ========== */
+  /* Visually hides checkbox but keeps it accessible */
   #toggle-contrast {
     position: absolute;
     left: -9999px;
   }
   
+  /* Styles the label that toggles high contrast mode */
   .contrast-toggle label {
     display: inline-block;
     padding: 8px 12px;
@@ -138,16 +158,19 @@ body {
     font-weight: bold;
   }
   
+  /* Adds keyboard focus outline to toggle label */
   .contrast-toggle label:focus {
     outline: 3px solid #4FC3F7;
   }
   
   /* ========== High Contrast Mode ========== */
+  /* Applies dark background and white text globally */
   #toggle-contrast:checked ~ .page-wrapper {
     background-color: #000000 !important;
     color: #FFFFFF !important;
   }
   
+  /* Sets dark background and white text for header, footer, and nav */
   #toggle-contrast:checked ~ .page-wrapper header,
   #toggle-contrast:checked ~ .page-wrapper footer,
   #toggle-contrast:checked ~ .page-wrapper nav ul {
@@ -155,40 +178,49 @@ body {
     color: #FFFFFF !important;
   }
   
+  /* Makes nav links bright yellow for visibility */
   #toggle-contrast:checked ~ .page-wrapper nav ul li a {
     color: #FFFF00 !important;
   }
   
+  /* Makes general links bright cyan in contrast mode */
   #toggle-contrast:checked ~ .page-wrapper a {
     color: #00FFFF !important;
     text-decoration: underline;
   }
   
+  /* Inverts hover styles for clarity in contrast mode */
   #toggle-contrast:checked ~ .page-wrapper a:hover,
   #toggle-contrast:checked ~ .page-wrapper a:focus {
     background-color: #FFFF00 !important;
     color: #000000 !important;
   }
-
+  
+  /* Ensures image captions remain readable in high contrast mode */
   #toggle-contrast:checked ~ .page-wrapper figcaption {
     color: #ffffff !important;
   }
   
   /* ========== Responsive Design ========== */
+  /* Adjusts layout for tablets and mobile devices */
   @media (max-width: 768px) {
+    /* Stacks nav items vertically */
     nav ul li {
       float: none;
       text-align: center;
     }
   
+    /* Stacks main and sidebar vertically */
     main {
       flex-direction: column;
     }
   
+    /* Moves sidebar above main content */
     .sidebar {
       order: -1;
     }
   
+    /* Makes video full width on small screens */
     video.small-video {
       width: 100%;
     }

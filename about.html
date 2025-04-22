@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Declares the document language for accessibility and SEO -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Jeju Island</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" /> <!-- Sets character encoding for proper text display -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures responsive scaling on mobile devices -->
+  <title>About Jeju Island</title> <!-- Page title shown in browser tab -->
+  <link rel="stylesheet" href="style.css" /> <!-- Link to the single external stylesheet -->
 </head>
 <body>
-  <!-- Hidden checkbox for high contrast mode -->
+
+  <!-- Hidden checkbox for enabling high contrast mode (CSS-only toggle) -->
   <input type="checkbox" id="toggle-contrast" />
 
-  <!-- Wrapper that responds to the toggle -->
+  <!-- Main wrapper that adapts to contrast mode and contains all page elements -->
   <div class="page-wrapper">
-    <div class="container">
+    <div class="container"> <!-- Centers content and limits max-width -->
+
+      <!-- Page header with site title and high contrast toggle label -->
       <header>
         <h1>All About Jeju</h1>
         <div class="contrast-toggle">
+          <!-- Label activates the contrast mode when clicked (linked to checkbox above) -->
           <label for="toggle-contrast">High Contrast Mode</label>
         </div>
       </header>
 
+      <!-- Navigation menu using a styled unordered list -->
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Jeju</a></li>
+          <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+          <li><a href="about.html">About Jeju</a></li> <!-- Current page -->
         </ul>
       </nav>
 
+      <!-- Main content area for this page -->
       <main>
         <section class="main-content">
           <h2>History & Culture</h2>
+          <!-- Descriptive paragraph about the cultural and natural heritage of Jeju -->
           <p>
             Jeju Island, or Jejudo, is South Korea’s most popular travel destination. 
             It features a stunning volcanic landscape, beach resorts, and scenic hiking trails. 
@@ -38,19 +45,23 @@
           </p>
 
           <h3>Watch & Listen</h3>
+          <!-- Embedded video describing Jeju Island (under 1 minute) -->
           <video controls class="small-video">
             <source src="media/Jeju_Video_Edited.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
 
+          <!-- Audio clip providing spoken information about Jeju -->
           <audio controls>
             <source src="media/Audio_JejuTravelInfo.mp3" type="audio/mp3">
             Your browser does not support the audio element.
           </audio>
 
+          <!-- Link to return to the homepage -->
           <p><a href="index.html">← Previous: Home Page</a></p>
 
           <h3>Learn More</h3>
+          <!-- External tourism resources for more information -->
           <ul>
             <li><a href="https://www.visitjeju.net/en" target="_blank" rel="noopener noreferrer">Visit Jeju – Official Tourism</a></li>
             <li><a href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener noreferrer">Korea Tourism Organization</a></li>
@@ -58,10 +69,12 @@
         </section>
       </main>
 
+      <!-- Footer with copyright -->
       <footer>
         <p>&copy; 2025 Explore Jeju. All rights reserved.</p>
       </footer>
-    </div>
-  </div>
+
+    </div> <!-- End .container -->
+  </div> <!-- End .page-wrapper -->
 </body>
 </html>

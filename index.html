@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Declares document language for accessibility -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Explore Jeju Island</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" /> <!-- Sets character encoding to UTF-8 for proper text rendering -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures responsive scaling on mobile devices -->
+  <title>Explore Jeju Island</title> <!-- Title of the webpage shown in the browser tab -->
+  <link rel="stylesheet" href="style.css" /> <!-- Links to a single external stylesheet -->
 </head>
 <body>
-  <!-- Hidden checkbox for high contrast toggle -->
+
+  <!-- Hidden checkbox input used to enable High Contrast Mode via CSS only -->
   <input type="checkbox" id="toggle-contrast" />
 
-  <!-- Wrapper responds to contrast toggle -->
+  <!-- Wrapper div whose styles change based on contrast toggle -->
   <div class="page-wrapper">
-    <div class="container">
+    <div class="container"> <!-- Centers and constrains the page content -->
+
+      <!-- Header section including site title and High Contrast toggle -->
       <header>
         <h1>Welcome to Explore Jeju</h1>
         <div class="contrast-toggle">
+          <!-- Label linked to the checkbox to toggle high contrast mode -->
           <label for="toggle-contrast">High Contrast Mode</label>
         </div>
       </header>
 
+      <!-- Navigation menu using unordered list, fully keyboard accessible -->
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Jeju</a></li>
+          <li><a href="index.html">Home</a></li> <!-- Link to current page -->
+          <li><a href="about.html">About Jeju</a></li> <!-- Link to the second page -->
         </ul>
       </nav>
 
+      <!-- Main content of the page -->
       <main>
         <section class="main-content">
           <h2>Discover Jeju Island</h2>
+          <!-- Introductory paragraph with accessible and descriptive content -->
           <p>
             Jeju Island, located off the southern coast of South Korea, is a volcanic island 
             known for its breathtaking natural beauty, unique culture, and serene coastal landscapes. 
@@ -38,6 +45,7 @@
           </p>
 
           <h2>Map of Jeju Island</h2>
+          <!-- Embedded interactive Google Map with Jeju Island location -->
           <div class="map-container">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127428.94291835557!2d126.37099205644006!3d33.387849994973376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfd12be436da1%3A0x93a05594b49c75f0!2z7J247LKc7KO87J6s7Yq4!5e0!3m2!1sko!2skr!4v1713861469403!5m2!1sko!2skr&hl=en" 
@@ -50,9 +58,11 @@
             </iframe>
           </div>
 
+          <!-- Link to navigate to the next page -->
           <p><a href="about.html">→ Next: About Jeju Island</a></p>
         </section>
 
+        <!-- Sidebar with featured images and accessible captions -->
         <aside class="sidebar">
           <figure>
             <img src="images/hallasan.jpg" alt="Mount Hallasan, Jeju" />
@@ -69,10 +79,12 @@
         </aside>
       </main>
 
+      <!-- Footer with copyright -->
       <footer>
         <p>&copy; 2025 Explore Jeju. All rights reserved.</p>
       </footer>
-    </div>
-  </div>
+
+    </div> <!-- End of container -->
+  </div> <!-- End of page-wrapper -->
 </body>
 </html>
