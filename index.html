@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Jeju Island</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Jeju Island</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Hidden checkbox for high contrast toggle -->
+  <input type="checkbox" id="toggle-contrast" />
+
+  <!-- Wrapper responds to contrast toggle -->
+  <div class="page-wrapper">
     <div class="container">
-        <header>
-            <h1>Welcome to Explore Jeju</h1>
-        </header>
+      <header>
+        <h1>Welcome to Explore Jeju</h1>
+        <div class="contrast-toggle">
+          <label for="toggle-contrast">High Contrast Mode</label>
+        </div>
+      </header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Jeju</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Jeju</a></li>
+        </ul>
+      </nav>
 
-        <main>
-            <section class="main-content">
-                <h2>Discover Jeju Island</h2>
-                <p>
-                    Jeju Island, located off the southern coast of South Korea, is a volcanic island 
-                    known for its breathtaking natural beauty, unique culture, and serene coastal landscapes. 
-                    This site will guide you through some of the must-see attractions, history, and local traditions 
-                    that make Jeju one of Asia’s most enchanting travel destinations.
-                </p>
+      <main>
+        <section class="main-content">
+          <h2>Discover Jeju Island</h2>
+          <p>
+            Jeju Island, located off the southern coast of South Korea, is a volcanic island 
+            known for its breathtaking natural beauty, unique culture, and serene coastal landscapes. 
+            This site will guide you through some of the must-see attractions, history, and local traditions 
+            that make Jeju one of Asia’s most enchanting travel destinations.
+          </p>
 
-                <h2>Map of Jeju Island</h2>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127428.94291835557!2d126.37099205644006!3d33.387849994973376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfd12be436da1%3A0x93a05594b49c75f0!2z7J247LKc7KO87J6s7Yq4!5e0!3m2!1sko!2skr!4v1713861469403!5m2!1sko!2skr" 
-                        width="100%" 
-                        height="300" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+          <h2>Map of Jeju Island</h2>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127428.94291835557!2d126.37099205644006!3d33.387849994973376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfd12be436da1%3A0x93a05594b49c75f0!2z7J247LKc7KO87J6s7Yq4!5e0!3m2!1sko!2skr!4v1713861469403!5m2!1sko!2skr&hl=en" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
 
-                <p><a href="about.html">→ Next: About Jeju Island</a></p>
-            </section>
+          <p><a href="about.html">→ Next: About Jeju Island</a></p>
+        </section>
 
-            <aside class="sidebar">
-                <figure>
-                    <img src="images/hallasan.jpg" alt="Mount Hallasan, Jeju">
-                    <figcaption>Mt Hallasan (Credit: Korea.net / Korean Culture and Information Service)</figcaption>
-                </figure>
-                
-                <figure>
-                    <img src="images/seongsan.jpg" alt="Seongsan Ilchulbong Crater">
-                    <figcaption>Seongsan Ilchulbong (Credit: Yonhap News)</figcaption>
-                </figure>
-                
-                <figure>
-                    <img src="images/waterfall.jpg" alt="Cheonjiyeon Waterfall">
-                    <figcaption>Cheonjiyeon Waterfall (Credit: Korea Tourism Organization)</figcaption>
-                </figure>
-            </aside>
-            
-        </main>
+        <aside class="sidebar">
+          <figure>
+            <img src="images/hallasan.jpg" alt="Mount Hallasan, Jeju" />
+            <figcaption>Mt Hallasan (Credit: Korea.net / Korean Culture and Information Service)</figcaption>
+          </figure>
+          <figure>
+            <img src="images/seongsan.jpg" alt="Seongsan Ilchulbong Crater" />
+            <figcaption>Seongsan Ilchulbong (Credit: Yonhap News)</figcaption>
+          </figure>
+          <figure>
+            <img src="images/waterfall.jpg" alt="Cheonjiyeon Waterfall" />
+            <figcaption>Cheonjiyeon Waterfall (Credit: Korea Tourism Organization)</figcaption>
+          </figure>
+        </aside>
+      </main>
 
-        <footer>
-            <p>&copy; 2025 Explore Jeju. All rights reserved.</p>
-        </footer>
+      <footer>
+        <p>&copy; 2025 Explore Jeju. All rights reserved.</p>
+      </footer>
     </div>
+  </div>
 </body>
 </html>
