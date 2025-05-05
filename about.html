@@ -1,80 +1,94 @@
-<!DOCTYPE html>
-<html lang="en"> <!-- Declares the document language for accessibility and SEO -->
-<head>
-  <meta charset="UTF-8" /> <!-- Sets character encoding for proper text display -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures responsive scaling on mobile devices -->
-  <title>About Jeju Island</title> <!-- Page title shown in browser tab -->
-  <link rel="stylesheet" href="style.css" /> <!-- Link to the single external stylesheet -->
+<!DOCTYPE html> <!-- Declares the document as HTML5 -->
+<html lang="en"> <!-- Sets the language of the document to English -->
+<head> <!-- Head section contains metadata and linked resources -->
+  <meta charset="UTF-8" /> <!-- Defines character encoding as UTF-8 to support all characters -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive scaling on mobile devices -->
+  <meta name="description" content="Discover the culture and beauty of Jeju Island" /> <!-- Description for SEO and screen readers -->
+  <meta name="author" content="Your Name" /> <!-- Metadata indicating the author of the document -->
+  <link rel="stylesheet" href="style.css" /> <!-- Links the external stylesheet -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- Specifies the favicon shown in the browser tab -->
+  <title>About Jeju Island</title> <!-- Sets the page title shown on the browser tab -->
 </head>
-<body>
+<body> <!-- Begins the visible page content -->
+  <a href="#mainContent" class="skip-link">Skip to Main Content</a> <!-- Skip link for keyboard users to jump to main content -->
+  <input type="checkbox" id="toggleContrast" /> <!-- Hidden checkbox used to enable high contrast mode -->
 
-  <!-- Hidden checkbox for enabling high contrast mode (CSS-only toggle) -->
-  <input type="checkbox" id="toggle-contrast" />
+  <div class="pageWrapper"> <!-- Wrapper for the entire page layout and high contrast theme -->
+    <div id="jejuContainer"> <!-- Main container for layout, styling, and page width control -->
 
-  <!-- Main wrapper that adapts to contrast mode and contains all page elements -->
-  <div class="page-wrapper">
-    <div class="container"> <!-- Centers content and limits max-width -->
-
-      <!-- Page header with site title and high contrast toggle label -->
-      <header>
-        <h1>All About Jeju</h1>
-        <div class="contrast-toggle">
-          <!-- Label activates the contrast mode when clicked (linked to checkbox above) -->
-          <label for="toggle-contrast">High Contrast Mode</label>
+      <header role="banner"> <!-- Header element; role="banner" identifies it as the site-wide banner -->
+        <h1>All About Jeju</h1> <!-- Main heading for the About page -->
+        <div class="contrastToggle"> <!-- Container for contrast mode toggle -->
+          <label for="toggleContrast">High Contrast Mode</label> <!-- Label that toggles the contrast mode when clicked -->
         </div>
       </header>
 
-      <!-- Navigation menu using a styled unordered list -->
-      <nav>
-        <ul>
+      <nav role="navigation"> <!-- Defines the site navigation region -->
+        <ul> <!-- Unordered list of internal navigation links -->
           <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
-          <li><a href="about.html">About Jeju</a></li> <!-- Current page -->
+          <li><a href="about.html">About Jeju</a></li> <!-- Link to the current About page -->
         </ul>
       </nav>
 
-      <!-- Main content area for this page -->
-      <main>
-        <section class="main-content">
-          <h2>History & Culture</h2>
-          <!-- Descriptive paragraph about the cultural and natural heritage of Jeju -->
-          <p>
-            Jeju Island, or Jejudo, is South Korea’s most popular travel destination. 
-            It features a stunning volcanic landscape, beach resorts, and scenic hiking trails. 
-            The island is also known for its distinct culture and dialect, highlighted by the Haenyeo — 
-            free-diving women who embody Jeju’s rich matriarchal traditions.
-          </p>
+      <main id="mainContent" role="main"> <!-- Main content region, marked for screen readers and skip links -->
+        <section class="jejuIntroContent"> <!-- Section element grouping all content about Jeju -->
 
-          <h3>Watch & Listen</h3>
-          <!-- Embedded video describing Jeju Island (under 1 minute) -->
-          <video controls class="small-video">
-            <source src="media/Jeju_Video_Edited.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+          <h2>History & Culture</h2> <!-- Section heading for historical and cultural background -->
+          <p>
+            Jeju Island, or Jejudo, is a unique travel destination blending natural wonders
+            with deep-rooted cultural heritage. It’s home to the Haenyeo, the free-diving women
+            of Jeju, and features preserved stone villages, traditional markets, and local dialects.
+          </p> <!-- Paragraph describing Jeju’s unique culture and traditions -->
+
+          <h3>Key Attractions</h3> <!-- Subheading introducing key tourist attractions -->
+          <table> <!-- Table used to list attractions and their highlights -->
+            <thead> <!-- Table header row -->
+              <tr><th>Place</th><th>Highlight</th></tr> <!-- Table headers: Place and its highlight -->
+            </thead>
+            <tbody> <!-- Body of the table containing data rows -->
+              <tr>
+                <td><a href="https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500349" target="_blank">Seongsan Ilchulbong</a></td>
+                <td>Sunrise Peak with crater views</td>
+              </tr> <!-- Row for Seongsan Ilchulbong with link and description -->
+              <tr>
+                <td><a href="https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500685" target="_blank">Hallasan Mountain</a></td>
+                <td>Highest point in South Korea</td>
+              </tr> <!-- Row for Hallasan Mountain with link and description -->
+            </tbody>
+          </table>
+
+          <h3>Cultural Significance</h3> <!-- Subheading introducing Jeju's cultural identity -->
+          <p>
+            The island’s isolation has cultivated a distinct culture unlike mainland Korea. Festivals,
+            cuisine like black pork BBQ, and the Jeju Stone Statues (Dol Hareubang) tell stories of resilience
+            and island spirit.
+          </p> <!-- Paragraph describing distinctive cultural elements of Jeju -->
+
+          <h3>Watch & Listen</h3> <!-- Subheading for multimedia content -->
+          <video controls class="small-video"> <!-- Embedded video with playback controls -->
+            <source src="media/jeju_video.mp4" type="video/mp4" /> <!-- MP4 video source file -->
+            Your browser does not support the video tag. <!-- Fallback message if browser doesn’t support video -->
           </video>
 
-          <!-- Audio clip providing spoken information about Jeju -->
-          <audio controls>
-            <source src="media/Audio_JejuTravelInfo.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
+          <audio controls> <!-- Embedded audio player -->
+            <source src="media/jeju_audio.mp3" type="audio/mp3" /> <!-- MP3 audio source file -->
+            Your browser does not support the audio element. <!-- Fallback message for unsupported audio -->
           </audio>
 
-          <!-- Link to return to the homepage -->
-          <p><a href="index.html">← Previous: Home Page</a></p>
+          <p><a href="index.html">← Previous: Home Page</a></p> <!-- Link to return to the homepage -->
 
-          <h3>Learn More</h3>
-          <!-- External tourism resources for more information -->
-          <ul>
-            <li><a href="https://www.visitjeju.net/en" target="_blank" rel="noopener noreferrer">Visit Jeju – Official Tourism</a></li>
-            <li><a href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener noreferrer">Korea Tourism Organization</a></li>
+          <h3>External Resources</h3> <!-- Subheading for external tourism links -->
+          <ul> <!-- Unordered list of external links -->
+            <li><a href="https://www.visitjeju.net/en" target="_blank" rel="noopener">Visit Jeju – Official Tourism</a></li> <!-- External link to Jeju tourism site -->
+            <li><a href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener">Korea Tourism Organization</a></li> <!-- Link to national tourism org -->
           </ul>
         </section>
       </main>
 
-      <!-- Footer with copyright -->
-      <footer>
-        <p>&copy; 2025 Explore Jeju. All rights reserved.</p>
+      <footer role="contentinfo"> <!-- Footer region marked with ARIA role -->
+        <p>&copy; 2025 Explore Jeju. All rights reserved.</p> <!-- Copyright -->
       </footer>
-
-    </div> <!-- End .container -->
-  </div> <!-- End .page-wrapper -->
+    </div>
+  </div>
 </body>
 </html>

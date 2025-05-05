@@ -1,228 +1,197 @@
-/* ========== Base Styles ========== */
-/* Sets up base font, removes default margin/padding, and sets default background/text color */
+/* ========= Site-wide Style Strategy =========
+   Strategy: Mobile-first layout with flexbox; high-contrast toggle support;
+   responsive design with semantic clarity and accessibility emphasis
+*/
+
+/* Reset and Base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    color: #222222;
-  }
-  
-  /* Centers the main content with a max width */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  /* Enables smooth transition when switching contrast mode */
-  .page-wrapper {
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* ========== Skip Link ========== */
-  /* Visually hidden link for keyboard users to skip to main content */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #2E7D32;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-    text-decoration: none;
-  }
-  
-  /* Reveals skip link when focused */
-  .skip-link:focus {
-    top: 0;
-  }
-  
-  /* ========== Header & Footer ========== */
-  /* Unified color and layout for header and footer */
-  header, footer {
-    background-color: #2E7D32;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  /* ========== Navigation ========== */
-  /* Styles navigation list container */
-  nav ul {
-    list-style: none;
-    background-color: #333333;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  /* Floats navigation list items horizontally */
+  margin: 0; /* Removes default margin from body element */
+  padding: 0; /* Removes default padding from body element */
+  font-family: Arial, sans-serif; /* Sets font for readability */
+  background: #ffffff; /* Sets the default background to white */
+  color: #222222; /* Sets a dark grey text colour for readability */
+}
+
+/* Accessibility: Skip link for keyboard users */
+.skip-link {
+  position: absolute; /* Positions element absolutely in relation to parent */
+  top: -40px; /* Moves link off-screen by default */
+  left: 0; /* Aligns skip link to the left */
+  background: #2E7D32; /* Sets background colour (dark green) */
+  color: white; /* Sets text colour to white */
+  padding: 8px; /* Adds padding for clickable area */
+  z-index: 100; /* Brings link above other elements */
+  text-decoration: none; /* Removes underline from link */
+}
+.skip-link:focus {
+  top: 0; /* Brings skip link into view when focused */
+}
+
+/* Containers */
+#jejuContainer {
+  width: 90%; /* Uses 90% of the available width */
+  max-width: 1200px; /* Restricts container width to 1200px max */
+  margin: auto; /* Centers the container horizontally */
+}
+.pageWrapper {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for contrast toggle */
+}
+
+/* Header and Footer */
+header, footer {
+  background-color: #2E7D32; /* Dark green background for header/footer */
+  color: white; /* White text for contrast */
+  text-align: center; /* Centers text inside header/footer */
+  padding: 20px 0; /* Adds vertical padding */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none; /* Removes default list bullets */
+  background-color: #333; /* Dark grey background for navbar */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  overflow: hidden; /* Prevents floating issues */
+}
+nav ul li {
+  float: left; /* Makes list items appear side by side */
+}
+nav ul li a {
+  display: block; /* Allows padding to apply to whole link */
+  padding: 14px 20px; /* Adds spacing inside links */
+  color: white; /* White link text */
+  text-decoration: none; /* Removes underline */
+}
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #4FC3F7; /* Light blue background on hover/focus */
+  color: #000; /* Sets text to black for contrast */
+}
+
+/* Layout */
+main {
+  display: flex; /* Enables flexbox layout */
+  flex-wrap: wrap; /* Allows items to wrap to next line if needed */
+  margin-top: 20px; /* Adds spacing above the main content */
+}
+.jejuIntroContent {
+  flex: 3; /* Takes up 3 parts of available space */
+  padding: 20px; /* Adds padding around content */
+}
+#jejuHighlights {
+  flex: 1; /* Takes up 1 part of available space */
+  padding: 20px; /* Adds padding around highlights */
+  display: flex; /* Enables flex layout */
+  flex-direction: column; /* Arranges items in a column */
+  gap: 10px; /* Adds space between images */
+}
+#jejuHighlights img {
+  width: 100%; /* Makes image fill container width */
+  height: auto; /* Preserves image aspect ratio */
+  border-radius: 8px; /* Rounds corners of images */
+}
+
+/* Media Elements */
+video.small-video {
+  width: 90%; /* Makes video responsive */
+  margin: 1em 0; /* Adds vertical spacing */
+}
+audio {
+  margin: 1em 0; /* Adds vertical spacing around audio */
+}
+
+/* Tables */
+table {
+  border-collapse: collapse; /* Merges table borders */
+  width: 100%; /* Makes table full width of container */
+  margin-top: 1em; /* Adds spacing above the table */
+}
+th, td {
+  border: 1px solid #ddd; /* Adds light grey border to table cells */
+  padding: 8px; /* Adds padding to table cells */
+}
+th {
+  background-color: #f2f2f2; /* Light grey background for headers */
+}
+
+/* Captions */
+figcaption {
+  font-size: 0.85em; /* Slightly smaller font for captions */
+  font-style: italic; /* Italic text for stylistic distinction */
+  margin-top: 4px; /* Adds space above the caption */
+  color: #555; /* Medium grey text colour for caption */
+}
+
+/* Map */
+.mapContainer {
+  margin: 20px 0; /* Adds vertical spacing above and below the map */
+  border: 1px solid #ccc; /* Light grey border around map */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevents content overflow */
+}
+
+/* High Contrast Toggle */
+#toggleContrast {
+  position: absolute; /* Positions checkbox off-screen */
+  left: -9999px; /* Moves checkbox out of view */
+}
+.contrastToggle label {
+  display: inline-block; /* Makes label block-level for padding to apply */
+  padding: 8px 12px; /* Adds spacing inside label */
+  margin: 10px; /* Adds space around label */
+  background-color: #e0e0e0; /* Light grey background */
+  color: #000; /* Black text */
+  border: 2px solid #333; /* Dark grey border */
+  cursor: pointer; /* Changes cursor to pointer when hovered */
+  font-weight: bold; /* Makes label text bold */
+}
+
+/* Contrast Mode Styles */
+#toggleContrast:checked ~ .pageWrapper {
+  background-color: #000 !important; /* Overrides background to black */
+  color: #FFF !important; /* Overrides text to white */
+}
+#toggleContrast:checked ~ .pageWrapper header,
+#toggleContrast:checked ~ .pageWrapper footer,
+#toggleContrast:checked ~ .pageWrapper nav ul {
+  background-color: #000 !important; /* Black background for header, footer, nav */
+  color: #FFF !important; /* White text */
+}
+#toggleContrast:checked ~ .pageWrapper nav ul li a {
+  color: #FFFF00 !important; /* Bright yellow links for visibility */
+}
+#toggleContrast:checked ~ .pageWrapper a {
+  color: #00FFFF !important; /* Cyan links in contrast mode */
+}
+#toggleContrast:checked ~ .pageWrapper a:hover,
+#toggleContrast:checked ~ .pageWrapper a:focus {
+  background-color: #FFFF00 !important; /* Yellow background when hovered/focused */
+  color: #000000 !important; /* Black text for visibility */
+}
+#toggleContrast:checked ~ .pageWrapper figcaption {
+  color: #FFFFFF !important; /* Ensures captions are visible in contrast mode */
+}
+
+/* Responsive Layout for Tablet */
+@media (max-width: 768px) {
   nav ul li {
-    float: left;
+    float: none; /* Stacks nav items vertically */
+    text-align: center; /* Centers nav text */
   }
-  
-  /* Styles each link in the nav bar */
-  nav ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Changes link background/text on hover/focus for accessibility */
-  nav ul li a:hover,
-  nav ul li a:focus {
-    background-color: #4FC3F7;
-    color: #000000;
-  }
-  
-  /* ========== Main Layout ========== */
-  /* Sets up two-column layout using flexbox */
   main {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    flex-direction: column; /* Stacks main content and sidebar */
   }
-  
-  /* Main content area (left side, wider) */
-  .main-content {
-    flex: 3;
-    padding: 20px;
+  #jejuHighlights {
+    order: -1; /* Moves sidebar above content on mobile */
   }
-  
-  /* Sidebar (right side, narrower) */
-  .sidebar {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  /* Styles images in the sidebar to be responsive */
-  .sidebar img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  /* ========== Media ========== */
-  /* Responsive video block styling */
   video.small-video {
-    width: 80%;
-    display: block;
-    margin: 1em 0;
+    width: 100%; /* Makes video full width on small screens */
   }
-  
-  /* Adds spacing for audio elements */
-  audio {
-    margin: 1em 0;
-    display: block;
+}
+
+/* Responsive Layout for Small Devices */
+@media (max-width: 600px) {
+  #jejuHighlights {
+    display: none; /* Hides sidebar on very small screens */
   }
-  
-  /* ========== Captions ========== */
-  /* Styling for image captions */
-  figcaption {
-    font-size: 0.85em;
-    font-style: italic;
-    margin-top: 4px;
-    color: #555;
-  }
-  
-  /* ========== Map ========== */
-  /* Container styling for embedded Google Map */
-  .map-container {
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  /* ========== High Contrast Toggle ========== */
-  /* Visually hides checkbox but keeps it accessible */
-  #toggle-contrast {
-    position: absolute;
-    left: -9999px;
-  }
-  
-  /* Styles the label that toggles high contrast mode */
-  .contrast-toggle label {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 10px;
-    background-color: #e0e0e0;
-    color: #000;
-    border: 2px solid #333;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  /* Adds keyboard focus outline to toggle label */
-  .contrast-toggle label:focus {
-    outline: 3px solid #4FC3F7;
-  }
-  
-  /* ========== High Contrast Mode ========== */
-  /* Applies dark background and white text globally */
-  #toggle-contrast:checked ~ .page-wrapper {
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
-  }
-  
-  /* Sets dark background and white text for header, footer, and nav */
-  #toggle-contrast:checked ~ .page-wrapper header,
-  #toggle-contrast:checked ~ .page-wrapper footer,
-  #toggle-contrast:checked ~ .page-wrapper nav ul {
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
-  }
-  
-  /* Makes nav links bright yellow for visibility */
-  #toggle-contrast:checked ~ .page-wrapper nav ul li a {
-    color: #FFFF00 !important;
-  }
-  
-  /* Makes general links bright cyan in contrast mode */
-  #toggle-contrast:checked ~ .page-wrapper a {
-    color: #00FFFF !important;
-    text-decoration: underline;
-  }
-  
-  /* Inverts hover styles for clarity in contrast mode */
-  #toggle-contrast:checked ~ .page-wrapper a:hover,
-  #toggle-contrast:checked ~ .page-wrapper a:focus {
-    background-color: #FFFF00 !important;
-    color: #000000 !important;
-  }
-  
-  /* Ensures image captions remain readable in high contrast mode */
-  #toggle-contrast:checked ~ .page-wrapper figcaption {
-    color: #ffffff !important;
-  }
-  
-  /* ========== Responsive Design ========== */
-  /* Adjusts layout for tablets and mobile devices */
-  @media (max-width: 768px) {
-    /* Stacks nav items vertically */
-    nav ul li {
-      float: none;
-      text-align: center;
-    }
-  
-    /* Stacks main and sidebar vertically */
-    main {
-      flex-direction: column;
-    }
-  
-    /* Moves sidebar above main content */
-    .sidebar {
-      order: -1;
-    }
-  
-    /* Makes video full width on small screens */
-    video.small-video {
-      width: 100%;
-    }
-  }
-  
+}
